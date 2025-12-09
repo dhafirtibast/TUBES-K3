@@ -31,13 +31,13 @@
 
     <script type="text/babel">
         // ==========================================
-        // 1. DATA LAYER (Sama seperti Tahap 2)
+        // 1. DATA LAYER 
         // ==========================================
 
         const DATA_PERUSAHAAN = {
             nama: "PT JEPARA FURNITURE",
-            alamat: "Jalan Industri Mebel No. 12, Jepara, Jawa Tengah",
-            copyright: "© 2024 - Sistem Manajemen K3 Terpadu"
+            alamat: "Kelas TI-1C, D-IV Teknik Informatika, JTI Polinema",
+            copyright: "2025 - Tugas Besar K3"
         };
 
         const DATA_TIM = [
@@ -97,7 +97,7 @@
         const Navbar = ({ activeTab, setActiveTab }) => {
             const menus = [
                 { id: 'home', label: 'Beranda' },
-                { id: 'about', label: 'Tim Kami' }, // Nama menu disesuaikan
+                { id: 'about', label: 'Kelompok' }, // Nama menu disesuaikan
                 { id: 'sop', label: 'SOP Digital' },
                 { id: 'emergency', label: 'Darurat' }
             ];
@@ -137,15 +137,15 @@
                 <div className="relative bg-stone-900 h-[500px] flex items-center justify-center text-center px-4">
                     <img src="https://images.unsplash.com/photo-1611486212557-88be5ff6f941?q=80&w=2070&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-40"/>
                     <div className="relative z-10 max-w-3xl">
-                        <h1 className="text-5xl text-white font-bold mb-6">Kualitas Ekspor, Standar K3</h1>
-                        <p className="text-xl text-stone-200 mb-8">Sistem manajemen keselamatan kerja modern untuk industri mebel.</p>
+                        <h1 className="text-5xl text-white font-bold mb-6">Standar SOP K3</h1>
+                        <p className="text-xl text-stone-200 mb-8">Sistem manajemen keselamatan kerja untuk industri mebel.</p>
                         <button onClick={() => setActiveTab('sop')} className="bg-amber-700 hover:bg-amber-600 text-white px-8 py-3 rounded font-bold transition transform hover:scale-105">
                             Buka SOP Digital
                         </button>
                     </div>
                 </div>
                 <div className="py-12 bg-white text-center">
-                    <h3 className="text-2xl font-bold text-stone-800">Selamat Datang di Portal K3</h3>
+                    <h3 className="text-2xl font-bold text-stone-800">Selamat Datang di Laman SOP K3</h3>
                     <p className="text-stone-600 mt-2">Silakan pilih menu di atas untuk mengakses dokumen.</p>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                             <img src={member.img} alt={member.nama} className="w-full h-48 object-cover"/>
                             <div className="p-4 text-center">
                                 <h3 className="font-bold text-lg text-stone-800">{member.nama}</h3>
-                                <span className="text-xs text-stone-500 mt-1 block">Mahasiswa</span>
+                                <span className="text-xs text-stone-500 mt-1 block">D-IV Teknik Informatika</span>
                             </div>
                         </div>
                     ))}
@@ -177,7 +177,7 @@
             return (
                 <div className="max-w-7xl mx-auto px-4 py-16 fade-in">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-amber-900 mb-4">Prosedur Kerja Aman</h2>
+                        <h2 className="text-4xl font-bold text-amber-900 mb-4">Prosedur Keamanan Kerja</h2>
                         <p className="text-stone-600">Klik area di sebelah kiri untuk melihat detail SOP.</p>
                     </div>
 
@@ -227,12 +227,12 @@
                     <i data-lucide="siren" className="w-16 h-16 text-red-600 mx-auto mb-4"></i>
                     <h2 className="text-4xl font-bold text-red-800 mb-4">Dalam Keadaan Darurat</h2>
                     <p className="text-xl text-red-700 mb-8">
-                        Tetap tenang. Hubungi Supervisor atau Petugas K3 segera.
+                        Tetap tenang. Segera Hubungi Supervisor atau Petugas K3.
                     </p>
                     <div className="grid md:grid-cols-3 gap-4 text-left">
                         <div className="bg-white p-4 rounded shadow">
                             <h4 className="font-bold text-red-600">Kebakaran</h4>
-                            <p className="text-sm">Gunakan APAR, tekan alarm, evakuasi ke titik kumpul.</p>
+                            <p className="text-sm">Gunakan APAR, tekan alarm darurat, evakuasi ke titik kumpul.</p>
                         </div>
                         <div className="bg-white p-4 rounded shadow">
                             <h4 className="font-bold text-purple-600">Tumpahan Kimia</h4>
@@ -240,7 +240,7 @@
                         </div>
                         <div className="bg-white p-4 rounded shadow">
                             <h4 className="font-bold text-blue-600">Cedera</h4>
-                            <p className="text-sm">Lakukan P3K dasar, bawa ke klinik jika serius.</p>
+                            <p className="text-sm">Lakukan P3K dasar, bawa ke klinik jika terjadi cedera serius.</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +248,7 @@
         );
 
         // ==========================================
-        // 3. MAIN APP (Pengatur Lalu Lintas)
+        // 3. MAIN APP (Pengatur Traffic)
         // ==========================================
         const App = () => {
             // STATE UTAMA: Menentukan halaman mana yang aktif
