@@ -298,19 +298,22 @@
             );
         };
 
+        // ==========================================
+        // PERBAIKAN KOMPONEN APP
+        // ==========================================
+
         const App = () => {
             const [activeTab, setActiveTab] = useState('home');
 
-            // Global observer untuk perubahan DOM lainnya
+            // FIX: Hapus MutationObserver yang menyebabkan crash.
+            // Cukup jalankan createIcons saat activeTab berubah.
             useEffect(() => {
                 lucide.createIcons();
-                const observer = new MutationObserver(() => lucide.createIcons());
-                observer.observe(document.body, { childList: true, subtree: true });
-                return () => observer.disconnect();
             }, [activeTab]);
 
             return (
                 <div className="min-h-screen bg-stone-50 flex flex-col">
+                    {/* Navbar sudah punya useEffect sendiri untuk menangani isOpen, jadi aman */}
                     <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
                     
                     <main className="flex-grow">
